@@ -21,6 +21,8 @@ namespace HesapMakinesi
         {
             //yanlışlıkla event açtığımız zaman program hata verir design kısmı çalışmaz.
             //bu nedenle yanlışlıkla açılan eventi silme işlemini componentin properties kısmında ki eventlerden silmek gerek.
+
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace HesapMakinesi
 
         private void txt1_Click(object sender, EventArgs e)
         {
-            txtGirilenDeger.Text+= txt1.Text;
+            txtGirilenDeger.Text += txt1.Text;
         }
 
         private void txt2_Click(object sender, EventArgs e)
@@ -77,6 +79,7 @@ namespace HesapMakinesi
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             txtGirilenDeger.Clear();
+            txtSonuc.Clear();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -86,7 +89,7 @@ namespace HesapMakinesi
 
         private void btnFark_Click(object sender, EventArgs e)
         {
-            txtGirilenDeger.Text+= btnFark.Text;
+            txtGirilenDeger.Text += btnFark.Text;
 
         }
 
@@ -99,5 +102,31 @@ namespace HesapMakinesi
         {
             txtGirilenDeger.Text += btnBol.Text;
         }
+
+        private void btnEsittir_Click(object sender, EventArgs e)
+        {
+           
+                try
+                {
+                    // TextBox'tan girilen değeri alıyoruz
+                    string girilenIfade = txtGirilenDeger.Text;
+
+                    // Matematiksel ifadeyi çözümlemek için DataTable kullanıyoruz
+                    DataTable dt = new DataTable();
+
+                    // DataTable Compute metodu ile matematiksel ifadeyi hesaplıyoruz
+                    var sonuc = dt.Compute(girilenIfade.Replace("x", "*"), "");
+
+                    // Sonucu ekrana yazdırıyoruz
+                    txtSonuc.Text = "Sonuç: " + sonuc.ToString();
+                }
+                catch (Exception ex)
+                {
+                    // Hata olması durumunda kullanıcıya mesaj gösteriyoruz
+                    txtSonuc.Text = "Hatalı ifade! Lütfen tekrar deneyin.";
+                }
+            }
+        }
     }
 }
+

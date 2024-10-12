@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtGirilenDeger = new System.Windows.Forms.TextBox();
             this.btnBol = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -52,12 +52,13 @@
             this.txt0 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txtSonuc = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSonuc);
             this.panel1.Controls.Add(this.txtGirilenDeger);
             this.panel1.Controls.Add(this.btnBol);
             this.panel1.Controls.Add(this.button19);
@@ -84,20 +85,10 @@
             this.panel1.Size = new System.Drawing.Size(417, 529);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(0, 173);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(411, 49);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // txtGirilenDeger
             // 
             this.txtGirilenDeger.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtGirilenDeger.Location = new System.Drawing.Point(3, 127);
+            this.txtGirilenDeger.Location = new System.Drawing.Point(3, 131);
             this.txtGirilenDeger.Multiline = true;
             this.txtGirilenDeger.Name = "txtGirilenDeger";
             this.txtGirilenDeger.Size = new System.Drawing.Size(411, 49);
@@ -289,6 +280,7 @@
             this.btnEsittir.TabIndex = 11;
             this.btnEsittir.Text = "=";
             this.btnEsittir.UseVisualStyleBackColor = true;
+            this.btnEsittir.Click += new System.EventHandler(this.btnEsittir_Click);
             // 
             // button2
             // 
@@ -321,12 +313,23 @@
             this.button1.Text = "+/-";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // txtSonuc
+            // 
+            this.txtSonuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSonuc.Location = new System.Drawing.Point(3, 173);
+            this.txtSonuc.Multiline = true;
+            this.txtSonuc.Name = "txtSonuc";
+            this.txtSonuc.Size = new System.Drawing.Size(411, 49);
+            this.txtSonuc.TabIndex = 29;
+            this.txtSonuc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 553);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -362,7 +365,7 @@
         private System.Windows.Forms.Button button1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox txtGirilenDeger;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSonuc;
     }
 }
 
